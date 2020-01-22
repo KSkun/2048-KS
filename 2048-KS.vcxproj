@@ -141,7 +141,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\k2_conf.c" />
+    <ClCompile Include="Source\k2_locale.c" />
     <ClCompile Include="Source\k2_main.c" />
+    <ClCompile Include="Source\k2_ui.c" />
+    <ClCompile Include="Source\k2_util.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\k2_conf.h" />
+    <ClInclude Include="Source\k2_locale.h" />
+    <ClInclude Include="Source\k2_ui.h" />
+    <ClInclude Include="Source\k2_util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

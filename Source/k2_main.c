@@ -1,13 +1,11 @@
-#include <gtk/gtk.h>
+#include "k2_ui.h"
 
 int main(int argc, char *argv[]) {
 	gtk_init(&argc, &argv);
 
-	GtkWindow *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-	gtk_window_set_title(window, "HW!");
-	g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+	k2_ui_init();
 
-	gtk_widget_show_all(window);
+	gtk_widget_show_all(k2_ui_window);
 	gtk_main();
 
 	return 0;
