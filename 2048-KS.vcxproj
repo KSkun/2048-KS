@@ -153,6 +153,9 @@
     <ClInclude Include="Source\k2_ui.h" />
     <ClInclude Include="Source\k2_util.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\icon.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

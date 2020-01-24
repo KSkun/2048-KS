@@ -5,7 +5,7 @@ int main(int argc, char *argv[]) {
 
 	k2_ui_init();
 
-	gtk_widget_show_all(k2_ui_window);
+	gtk_widget_show_all(GTK_WIDGET(k2_ui_window));
 	gtk_main();
 
 	return 0;
