@@ -24,6 +24,9 @@ const char *K2_UI_GAME_4096_COLOR = "#3C3A32";
 const char *K2_UI_2048_LABEL_FONT = "Microsoft Yahei Bold 48";
 const char *K2_UI_SCORE_TITLE_FONT = "Microsoft Yahei Bold 8";
 const char *K2_UI_SCORE_TEXT_FONT = "Microsoft Yahei Bold 18";
-const char *K2_UI_GAME_FONT = "Microsoft Yahei Bold 42";
+const char *K2_UI_GAME_FONT_1 = "Microsoft Yahei Bold 32";
+const char *K2_UI_GAME_FONT_2 = "Microsoft Yahei Bold 26";
+const char *K2_UI_GAME_FONT_3 = "Microsoft Yahei Bold 22";
+const char *K2_UI_GAME_FONT_4 = "Microsoft Yahei Bold 18";
 
 const char *K2_UI_ICON_FILE = "Resource/icon.png";

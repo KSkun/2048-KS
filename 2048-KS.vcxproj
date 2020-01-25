@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\k2_conf.c" />
+    <ClCompile Include="Source\k2_game.c" />
     <ClCompile Include="Source\k2_locale.c" />
     <ClCompile Include="Source\k2_main.c" />
     <ClCompile Include="Source\k2_ui.c" />
@@ -149,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\k2_conf.h" />
+    <ClInclude Include="Source\k2_game.h" />
     <ClInclude Include="Source\k2_locale.h" />
     <ClInclude Include="Source\k2_ui.h" />
     <ClInclude Include="Source\k2_util.h" />

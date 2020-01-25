@@ -30,6 +30,9 @@
     <ClCompile Include="Source\k2_conf.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\k2_game.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\k2_ui.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Source\k2_conf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\k2_game.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -26,6 +26,9 @@ extern const char *K2_UI_GAME_4096_COLOR;
 extern const char *K2_UI_2048_LABEL_FONT;
 extern const char *K2_UI_SCORE_TITLE_FONT;
 extern const char *K2_UI_SCORE_TEXT_FONT;
-extern const char *K2_UI_GAME_FONT;
+extern const char *K2_UI_GAME_FONT_1;
+extern const char *K2_UI_GAME_FONT_2;
+extern const char *K2_UI_GAME_FONT_3;
+extern const char *K2_UI_GAME_FONT_4;
 
 extern const char *K2_UI_ICON_FILE;

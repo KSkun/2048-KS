@@ -3,6 +3,7 @@
 int main(int argc, char *argv[]) {
 	gtk_init(&argc, &argv);
 
+	srand(time(NULL));
 	k2_ui_init();
 
 	gtk_widget_show_all(GTK_WIDGET(k2_ui_window));

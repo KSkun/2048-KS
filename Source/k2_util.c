@@ -14,3 +14,7 @@ GdkPixbuf *k2_get_pixbuf(const gchar *filename) {
 	}
 	return pixbuf;
 }
+
+int k2_rand_int(int low, int high) { // gen rand int in [low, high)
+	return rand() % (high - low) + low;
+}
