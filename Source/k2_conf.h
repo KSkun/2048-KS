@@ -2,6 +2,12 @@
 
 #include <gdk/gdk.h>
 
+extern const char *K2_NAME;
+extern const char *K2_WEBSITE;
+extern const char *K2_VERSION;
+extern const char *K2_COPYRIGHT;
+extern const char *K2_COMMENTS;
+
 extern const char *K2_UI_BG_COLOR;
 extern const char *K2_UI_TEXT_COLOR;
 extern const char *K2_UI_SCORE_BG_COLOR;

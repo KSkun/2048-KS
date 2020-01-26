@@ -4,6 +4,12 @@ gchar *k2_to_utf8(char *str) {
 	return g_locale_to_utf8(str, -1, NULL, NULL, NULL);
 }
 
+gchar *k2_itoa(int val) {
+	static gchar buf[1000];
+	_itoa_s(val, buf, 1000, 10);
+	return buf;
+}
+
 GdkPixbuf *k2_get_pixbuf(const gchar *filename) {
 	GdkPixbuf *pixbuf;
 	GError *err = NULL;

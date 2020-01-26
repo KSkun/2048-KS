@@ -1,5 +1,11 @@
 #include "k2_conf.h"
 
+const char *K2_NAME = "2048-KS";
+const char *K2_WEBSITE = "https://github.com/KSkun/2048-KS";
+const char *K2_VERSION = "debug-build";
+const char *K2_COPYRIGHT = "Copyright (c) KSkun, 2020";
+const char *K2_COMMENTS = "2048-KS 为 KSkun 的 C 语言寒假作业，使用 C 语言与 GTK+ 图形界面库开发。";
+
 const char *K2_UI_BG_COLOR = "#FAF8EF";
 const char *K2_UI_TEXT_COLOR = "#776E65";
 const char *K2_UI_SCORE_BG_COLOR = "#BBADA0";
