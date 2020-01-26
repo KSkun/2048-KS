@@ -8,7 +8,7 @@ extern const char *K2_UI_SCORE_BG_COLOR;
 extern const char *K2_UI_SCORE_TITLE_COLOR;
 extern const char *K2_UI_SCORE_TEXT_COLOR;
 extern const char *K2_UI_GAME_BG_COLOR;
-extern const char *K2_UI_GAME_TEXT_WHITE;
+extern const char *K2_UI_GAME_TEXT_WHITE_COLOR;
 extern const char *K2_UI_GAME_BLANK_COLOR;
 extern const char *K2_UI_GAME_2_COLOR;
 extern const char *K2_UI_GAME_4_COLOR;

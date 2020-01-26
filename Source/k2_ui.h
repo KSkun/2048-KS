@@ -1,5 +1,6 @@
 #pragma once
 
+#include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 
 #include "k2_conf.h"
@@ -20,3 +21,9 @@ extern GtkWidget *k2_ui_menu_bar, *k2_ui_game_menu_item, *k2_ui_game_menu, *k2_u
 void k2_ui_init();
 
 void k2_ui_game_init_label(GtkWidget **label, GtkWidget **event_box, char *text, char *bg_color_str, char *fg_color_str, char *font_str, gboolean destroy);
+
+void k2_ui_game_init_label_with_val(GtkWidget **label, GtkWidget **event_box, int val, gboolean destroy);
+
+gboolean k2_ui_game_new_menu_item_handler(GtkWidget *widget, gpointer data);
+
+gboolean k2_ui_game_key_press_handler(GtkWidget *widget, GdkEventKey *event, gpointer data);

@@ -34,7 +34,8 @@ void k2_ui_init() {
 	gtk_window_set_resizable(GTK_WINDOW(k2_ui_window), FALSE);
 	gtk_widget_modify_bg(k2_ui_window, GTK_STATE_NORMAL, &k2_ui_bg_color);
 	gtk_window_set_icon(GTK_WINDOW(k2_ui_window), k2_get_pixbuf(K2_UI_ICON_FILE));
-	g_signal_connect(GTK_WINDOW(k2_ui_window), "destroy", G_CALLBACK(gtk_main_quit), NULL);
+	g_signal_connect(k2_ui_window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+	g_signal_connect(k2_ui_window, "key-press-event", G_CALLBACK(k2_ui_game_key_press_handler), NULL);
 
 	// fixed container
 	k2_ui_fixed = gtk_fixed_new();
@@ -139,4 +140,80 @@ void k2_ui_game_init_label(GtkWidget **label, GtkWidget **event_box, char *text,
 	gtk_widget_modify_font(*label, font);
 	pango_font_description_free(font);
 	gtk_container_add(GTK_CONTAINER(*event_box), *label);
+}
+
+void k2_ui_game_init_label_with_val(GtkWidget **label, GtkWidget **event_box, int val, gboolean destroy) {
+	switch (val) {
+	case 0:
+		k2_ui_game_init_label(label, event_box, "", K2_UI_GAME_BLANK_COLOR, K2_UI_TEXT_COLOR, K2_UI_GAME_FONT_1, destroy);
+		break;
+	case 2:
+		k2_ui_game_init_label(label, event_box, "2", K2_UI_GAME_2_COLOR, K2_UI_TEXT_COLOR, K2_UI_GAME_FONT_1, destroy);
+		break;
+	case 4:
+		k2_ui_game_init_label(label, event_box, "4", K2_UI_GAME_4_COLOR, K2_UI_TEXT_COLOR, K2_UI_GAME_FONT_1, destroy);
+		break;
+	case 8:
+		k2_ui_game_init_label(label, event_box, "8", K2_UI_GAME_8_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_1, destroy);
+		break;
+	case 16:
+		k2_ui_game_init_label(label, event_box, "16", K2_UI_GAME_16_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_2, destroy);
+		break;
+	case 32:
+		k2_ui_game_init_label(label, event_box, "32", K2_UI_GAME_32_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_2, destroy);
+		break;
+	case 64:
+		k2_ui_game_init_label(label, event_box, "64", K2_UI_GAME_64_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_2, destroy);
+		break;
+	case 128:
+		k2_ui_game_init_label(label, event_box, "128", K2_UI_GAME_128_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_3, destroy);
+		break;
+	case 256:
+		k2_ui_game_init_label(label, event_box, "256", K2_UI_GAME_256_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_3, destroy);
+		break;
+	case 512:
+		k2_ui_game_init_label(label, event_box, "512", K2_UI_GAME_512_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_3, destroy);
+		break;
+	case 1024:
+		k2_ui_game_init_label(label, event_box, "1024", K2_UI_GAME_1024_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_4, destroy);
+		break;
+	case 2048:
+		k2_ui_game_init_label(label, event_box, "2048", K2_UI_GAME_2048_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_4, destroy);
+		break;
+	case 4096:
+		k2_ui_game_init_label(label, event_box, "4096", K2_UI_GAME_4096_COLOR, K2_UI_GAME_TEXT_WHITE_COLOR, K2_UI_GAME_FONT_4, destroy);
+		break;
+	default:
+		fprintf(stderr, "2048-KS Error: k2_ui_game_init_label_with_val: invalid val value %d\n", val);
+		break;
+	}
+}
+
+gboolean k2_ui_game_new_menu_item_handler(GtkWidget *widget, gpointer data) {
+	k2_game_new(FALSE);
+	return TRUE;
+}
+
+gboolean k2_ui_game_key_press_handler(GtkWidget *widget, GdkEventKey *event, gpointer data) {
+	switch (event->keyval) {
+	case GDK_Up:
+		k2_game_do_move(K2_DIR_UP);
+		break;
+	case GDK_Down:
+		k2_game_do_move(K2_DIR_DOWN);
+		break;
+	case GDK_Left:
+		k2_game_do_move(K2_DIR_LEFT);
+		break;
+	case GDK_Right:
+		k2_game_do_move(K2_DIR_RIGHT);
+		break;
+	default:
+		return FALSE;
+	}
+	if (k2_game_is_lost()) {
+		// TODO lost ui
+	}
+	k2_game_new_block_random();
+	return TRUE;
 }
