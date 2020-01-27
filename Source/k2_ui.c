@@ -256,18 +256,19 @@ gboolean k2_ui_game_key_press_handler(GtkWidget *widget, GdkEventKey *event, gpo
 		k2_ui_show_lose_dialog();
 		return FALSE;
 	}
+	gboolean moved = FALSE;
 	switch (event->keyval) {
 	case GDK_Up:
-		k2_game_do_move(K2_DIR_UP, &score);
+		moved = k2_game_do_move(K2_DIR_UP, &score);
 		break;
 	case GDK_Down:
-		k2_game_do_move(K2_DIR_DOWN, &score);
+		moved = k2_game_do_move(K2_DIR_DOWN, &score);
 		break;
 	case GDK_Left:
-		k2_game_do_move(K2_DIR_LEFT, &score);
+		moved = k2_game_do_move(K2_DIR_LEFT, &score);
 		break;
 	case GDK_Right:
-		k2_game_do_move(K2_DIR_RIGHT, &score);
+		moved = k2_game_do_move(K2_DIR_RIGHT, &score);
 		break;
 	default:
 		return FALSE;
@@ -282,6 +283,6 @@ gboolean k2_ui_game_key_press_handler(GtkWidget *widget, GdkEventKey *event, gpo
 	}
 	k2_game_score += score;
 	gtk_label_set_text(GTK_LABEL(k2_ui_score_text_label), k2_itoa(k2_game_score));
-	k2_game_new_block_random();
+	if (moved) k2_game_new_block_random();
 	return TRUE;
 }

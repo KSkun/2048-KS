@@ -24,4 +24,6 @@ gboolean k2_game_is_win();
 
 gboolean k2_game_is_lose();
 
+gboolean k2_game_comp_val(int val1[][4], int val2[][4]);
+
 gboolean k2_game_do_move(k2_game_direction dir, int *score);

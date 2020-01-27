@@ -224,10 +224,21 @@ gboolean k2_game_is_lose() {
 	return up_full && down_full && left_full && right_full;
 }
 
+gboolean k2_game_comp_val(int val1[][4], int val2[][4]) {
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			if (val1[i][j] != val2[i][j]) return FALSE;
+		}
+	}
+	return TRUE;
+}
+
 gboolean k2_game_do_move(k2_game_direction dir, int *score) {
 	*score = 0;
+	static int old_val[4][4];
 	static gboolean merged[4][4];
 	memset(merged, 0, sizeof(merged));
+	memcpy(old_val, k2_game_val, sizeof(old_val));
 	switch (dir) {
 	case K2_DIR_UP:
 		for (int i = 1; i < 4; i++) {
@@ -409,5 +420,5 @@ gboolean k2_game_do_move(k2_game_direction dir, int *score) {
 		fprintf(stderr, "2048-KS Error: k2_game_do_move: invalid direction value %d\n", dir);
 		break;
 	}
-	return FALSE;
+	return !k2_game_comp_val(k2_game_val, old_val);
 }
